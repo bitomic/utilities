@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "main": "dist/main.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
 }
