@@ -9,9 +9,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/utilities@workspace:."
   dependencies:
+    "@types/node": ^16.11.7
     typescript: ^4.4.4
   languageName: unknown
   linkType: soft
+
+"@types/node@npm:^16.11.7":
+  version: 16.11.7
+  resolution: "@types/node@npm:16.11.7"
+  checksum: 2706403e6efc4aa40fdce8f0b5d9884d5600c3c8610aedc7fa5e7e298d30366f7e8b7296028d52898dca3edef4c3e827b03bf20952c4780f13fa4e79864f7a86
+  languageName: node
+  linkType: hard
 
 "typescript@npm:^4.4.4":
   version: 4.4.4
