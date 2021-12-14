@@ -13,7 +13,7 @@
     "lint:fix": "eslint src/ --fix --ext .ts --cache"
   },
   "dependencies": {
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
