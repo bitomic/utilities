@@ -38,7 +38,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": ^16.0.0
     "@commitlint/config-conventional": ^16.0.0
-    "@types/node": ^16.11.11
+    "@types/node": ^16.11.17
     "@typescript-eslint/eslint-plugin": ^5.5.0
     "@typescript-eslint/parser": ^5.5.0
     eslint: ^8.5.0
@@ -356,10 +356,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.11.11":
-  version: 16.11.11
-  resolution: "@types/node@npm:16.11.11"
-  checksum: 1c472bd63f23ca0e4effc96e6e0c693b83b027f613a1f41b6d1bd7791f65ce171a351e0a5c92575cb59e84ad0a930875397bfbbb91a7c925ddbbb558f7461af8
+"@types/node@npm:^16.11.17":
+  version: 16.11.17
+  resolution: "@types/node@npm:16.11.17"
+  checksum: 86ed84f79450f6aba1a6ef09f8407c10076966c3cc7cc4eb3d35b8ae4f47817e525641396ef0a667fa0a88fcdf484f6182812c074601403083bdf3b5e1ac0313
   languageName: node
   linkType: hard
 
