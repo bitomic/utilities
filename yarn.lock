@@ -43,7 +43,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.9.0
     eslint: ^8.6.0
     husky: ^7.0.4
-    lint-staged: ^12.1.4
+    lint-staged: ^12.1.7
     rimraf: ^3.0.2
     typescript: ^4.5.4
   languageName: unknown
@@ -1770,9 +1770,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^12.1.4":
-  version: 12.1.4
-  resolution: "lint-staged@npm:12.1.4"
+"lint-staged@npm:^12.1.7":
+  version: 12.1.7
+  resolution: "lint-staged@npm:12.1.7"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -1789,7 +1789,7 @@ __metadata:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: f1f829328fbd0878e8c2100fe0968101e94903ce5acf95bae98ec6daa84c4e95f87957f9040782427be2087659f3809626ea42ba53bbe5f0036c4d3806cb313d
+  checksum: 3d0757706c8b0ca3f004bb2ffa89a9d5fc97ccdebfa4cde29a9636c661538780e194b99cbc5e4b8b89b13986187b33c97e009b09014511bbd45ee05ba557d0eb
   languageName: node
   linkType: hard
 
