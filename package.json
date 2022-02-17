@@ -10,6 +10,7 @@
     "hooks": "husky install .github/husky"
   },
   "devDependencies": {
+    "@bitomic/eslint-config": "workspace:*",
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
