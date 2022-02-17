@@ -3,6 +3,10 @@
 	"version": "1.0.0",
 	"license": "MIT",
 	"main": "dist/main.js",
+    "types": "dist/main.d.ts",
+    "files": [
+        "dist"
+    ],
 	"scripts": {
 		"build": "rimraf tsconfig.tsbuildinfo dist && yarn tsc --incremental",
 		"build:watch": "yarn tsc -w --incremental",
