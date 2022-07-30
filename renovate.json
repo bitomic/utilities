@@ -41,7 +41,7 @@
 		},
 		{
 			"automerge": false,
-			"matchPackagePatterns": [ "@sapphire" ]
+			"matchPackagePatterns": [ "@sapphire", "discord.js" ]
 		}
 	],
 	"rangeStrategy": "bump"
