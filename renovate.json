@@ -38,6 +38,10 @@
 				"@types/node-fetch",
 				"node-fetch"
 			]
+		},
+		{
+			"automerge": false,
+			"matchPackagePatterns": [ "@sapphire" ]
 		}
 	],
 	"rangeStrategy": "bump"
