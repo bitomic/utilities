@@ -40,7 +40,7 @@
 			]
 		},
 		{
-			"automerge": false,
+			"enabled": false,
 			"matchPackagePatterns": [ "@sapphire", "discord.js" ]
 		}
 	],
