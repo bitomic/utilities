@@ -1,7 +1,11 @@
-name: Node.js CI
+name: Node.js CI for monorepos
 
 on:
   workflow_call:
+  push:
+    branches: [ main ]
+  pull_request_target:
+    branches: [ main ]
 
 jobs:
   build:
@@ -20,8 +24,8 @@ jobs:
       run: yarn install --immutable
 
     - name: Build
-      run: yarn build
+      run: yarn build:all
     
     - name: Lint
-      run: yarn lint
+      run: yarn lint:all
   
