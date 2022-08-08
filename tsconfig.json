@@ -7,10 +7,6 @@
 		"strict": true,
 		"sourceMap": true,
 
-		/* Paths */
-		"outDir": "./dist",
-		"rootDir": "./src",
-
 		/* The "No" Corner */
 		"noImplicitAny": true,
 		"noImplicitOverride": true,
