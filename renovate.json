@@ -38,7 +38,12 @@
 				"@types/node-fetch",
 				"node-fetch"
 			]
-		}
+		},
+		{
+			"automerge": true,
+			"groupName": "Sapphire Dependencies",
+			"matchPackagePatterns": ["@sapphire"]
+		},
 	],
 	"rangeStrategy": "bump"
 }
