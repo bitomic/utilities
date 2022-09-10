@@ -86,7 +86,7 @@ const config = {
 		'semi': [ 'error', 'never' ],
 		'sort-imports': [
 			'error',
-			{ 'ignoreCase': true }
+			{ 'ignoreCase': true, "ignoreDeclarationSort": true }
 		],
 		'sort-keys': 'error',
 		'space-in-parens': [ 'error', 'always' ],
