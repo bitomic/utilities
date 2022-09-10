@@ -8,18 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Print event_name (debug)
-      run: echo ${{ github.event_name }}
-
-    - name: Checkout main branch
-      if: ${{ github.event_name != 'pull_request' }}
-      uses: actions/checkout@v3
+    - name: Print sha (debug)
+      run: echo ${{ github.sha }}
     
-    - name: Checkout pull request head
-      if: ${{ github.event_name == 'pull_request' }}
+    - name: Checkout
       uses: actions/checkout@v3
       with:
-        ref: ${{ github.event.pull_request.head.sha }}
+        ref: ${{ github.sha }}
 
     - name: Use Node.js 18.x
       uses: actions/setup-node@v3
