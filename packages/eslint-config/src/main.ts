@@ -65,6 +65,7 @@ const config = {
 		'newline-per-chained-call': 'error',
 		'no-console': 'error',
 		'no-constructor-return': 'error',
+		'no-duplicate-imports': 'error',
 		'no-extra-parens': 'error',
 		'no-multiple-empty-lines': 'error',
 		'no-nested-ternary': 'error',
