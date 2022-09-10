@@ -8,13 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Print event_name (debug)
+      run: echo github.event_name    
+
     - name: Checkout main branch
-      uses: actions/checkout@v3
       if: ${{ github.event_name != 'pull_request' }}
+      uses: actions/checkout@v3
     
     - name: Checkout pull request head
-      uses: actions/checkout@v3
       if: ${{ github.event_name == 'pull_request' }}
+      uses: actions/checkout@v3
       with:
         ref: ${{ github.event.pull_request.head.sha }}
 
