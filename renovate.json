@@ -38,10 +38,6 @@
 				"@types/node-fetch",
 				"node-fetch"
 			]
-		},
-		{
-			"enabled": false,
-			"matchPackagePatterns": [ "@sapphire", "discord.js" ]
 		}
 	],
 	"rangeStrategy": "bump"
