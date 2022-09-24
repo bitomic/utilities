@@ -1,5 +1,4 @@
-import { blue, cyan, green, magenta, red, yellow } from 'colorette'
-import type { Color } from 'colorette'
+import { blue, type Color, cyan, green, magenta, red, yellow } from 'colorette'
 import { format } from 'winston'
 import util from 'util'
 
