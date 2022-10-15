@@ -43,7 +43,7 @@
 			"automerge": true,
 			"groupName": "Sapphire Dependencies",
 			"matchPackagePatterns": ["@sapphire"]
-		},
+		}
 	],
 	"rangeStrategy": "bump"
 }
