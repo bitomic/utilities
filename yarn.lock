@@ -36,7 +36,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/eslint-config@workspace:packages/eslint-config"
   dependencies:
-    "@types/node": ^17.0.18
+    "@types/node": ^18.11.5
     "@typescript-eslint/eslint-plugin": ^5.41.0
     "@typescript-eslint/parser": ^5.41.0
     eslint: ^8.26.0
@@ -49,7 +49,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/logger@workspace:packages/logger"
   dependencies:
-    "@types/node": ^17.0.18
+    "@types/node": ^18.11.5
     "@types/split": ^1.0.2
     "@typescript-eslint/eslint-plugin": ^5.41.0
     "@typescript-eslint/parser": ^5.41.0
@@ -68,7 +68,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/material-colors@workspace:packages/material-colors"
   dependencies:
-    "@types/node": ^17.0.18
+    "@types/node": ^18.11.5
     "@typescript-eslint/eslint-plugin": ^5.41.0
     "@typescript-eslint/parser": ^5.41.0
     eslint: ^8.26.0
@@ -81,7 +81,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/utilities@workspace:packages/utilities"
   dependencies:
-    "@types/node": ^17.0.18
+    "@types/node": ^18.11.5
     "@typescript-eslint/eslint-plugin": ^5.41.0
     "@typescript-eslint/parser": ^5.41.0
     eslint: ^8.26.0
@@ -457,10 +457,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^17.0.18":
-  version: 17.0.18
-  resolution: "@types/node@npm:17.0.18"
-  checksum: 6c4edfc2b3ba2342a9c3d56e934c5245948ab752f4dc04bd6790b9603e6ebc53bc4f5befc3662e207f7dba2ddd17ccf657f915e319ea7cdd4f77b851079d1611
+"@types/node@npm:^18.11.5":
+  version: 18.11.5
+  resolution: "@types/node@npm:18.11.5"
+  checksum: ac54e9287dd4549ea3dc8aabc0cf7bfa04c52f02925d7fd68414789617ec770f034c8ae2e111e8bd00d446a46fcac42587b5a316a1303e2f6ea094854248c9ff
   languageName: node
   linkType: hard
 
