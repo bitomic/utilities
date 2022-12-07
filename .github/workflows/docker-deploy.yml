@@ -25,4 +25,4 @@ jobs:
           && export TOKEN=${{ secrets.GITHUB_TOKEN }} \\
           && echo $TOKEN | wc -c \\
           && echo $TOKEN | docker login ghcr.io -u ${{ github.event.repository.user }} --password-stdin \\
-          && docker run -d --net ${{ secrets.DOCKER_NETWORK }} --name ${{ github.event.repository.name }} ghcr.io/${{ github.event.repository }}:latest" >> /dev/null
+          && docker run -d --net ${{ secrets.DOCKER_NETWORK }} --name ${{ github.event.repository.name }} ghcr.io/${{ github.event.repository }}:latest"
