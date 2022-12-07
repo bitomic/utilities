@@ -2,19 +2,6 @@ name: Deploy using Docker via SSH
 
 on:
   workflow_call:
-    inputs:
-      DOCKER_NETWORK:
-        required: true
-        type: string
-      SSH_HOST:
-        required: true
-        type: string
-      SSH_PRIVATE_KEY:
-        required: true
-        type: string
-      SSH_USER:
-        required: true
-        type: string
 
 jobs:
   ssh:
