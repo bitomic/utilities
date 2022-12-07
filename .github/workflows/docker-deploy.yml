@@ -18,8 +18,8 @@ jobs:
       - name: Add known hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Login via SSH
+      - name: Run commands in remote host
         run: |
-          ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo \"Test\" >> ~/code/testfile \\
-          && echo \"Test 2\" >> ~/code/testfile" >> /dev/null
-
+          ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker stop ${{ github.event.repository.name }} \\
+          && docker rm ${{ github.event.repository.name }}
+          && docker run -d --name ${{ github.event.repository.name }} alpine tail -f /dev/null" >> /dev/null
