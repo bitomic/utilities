@@ -18,9 +18,12 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Run commands in remote host
+        env:
         run: |
           ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker stop ${{ github.event.repository.name }} || true \\
           && docker rm ${{ github.event.repository.name }} || true \\
           && docker image prune -a -f \\
-          && echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.event.repository.user }} --password-stdin \\
+          && export TOKEN=${{ secrets.GITHUB_TOKEN }} \\
+          && echo $TOKEN | wc -c \\
+          && echo $TOKEN | docker login ghcr.io -u ${{ github.event.repository.user }} --password-stdin \\
           && docker run -d --net ${{ secrets.DOCKER_NETWORK }} --name ${{ github.event.repository.name }} ghcr.io/${{ github.event.repository }}:latest" >> /dev/null
