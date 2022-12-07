@@ -19,5 +19,7 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Login via SSH
-        run: ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo \"Test\" >> ~/code/testfile" >> /dev/null
+        run: |
+          ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo \"Test\" >> ~/code/testfile \\
+          echo \"Test 2\" >> ~/code/testfile" >> /dev/null
 
