@@ -8,6 +8,13 @@ jobs:
     name: SSH and deploy
     runs-on: ubuntu-latest
     steps:
+      - name: Login to GHCR.io
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -24,5 +31,4 @@ jobs:
           && docker image prune -a -f \\
           && export TOKEN=${{ github.token }} \\
           && echo $TOKEN | wc -c \\
-          && echo $TOKEN | docker login ghcr.io -u ${{ github.event.repository.user }} --password-stdin \\
           && docker run -d --net ${{ secrets.DOCKER_NETWORK }} --name ${{ github.event.repository.name }} ghcr.io/${{ github.event.repository }}:latest"
