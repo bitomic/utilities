@@ -22,7 +22,7 @@ jobs:
           ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker stop ${{ github.event.repository.name }} || true \\
           && docker rm ${{ github.event.repository.name }} || true \\
           && docker image prune -a -f \\
-          && export TOKEN=${{ secrets.GITHUB_TOKEN }} \\
+          && export TOKEN=${{ github.token }} \\
           && echo $TOKEN | wc -c \\
           && echo $TOKEN | docker login ghcr.io -u ${{ github.event.repository.user }} --password-stdin \\
           && docker run -d --net ${{ secrets.DOCKER_NETWORK }} --name ${{ github.event.repository.name }} ghcr.io/${{ github.event.repository }}:latest"
