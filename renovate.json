@@ -42,7 +42,13 @@
 		{
 			"automerge": true,
 			"groupName": "Sapphire Dependencies",
-			"matchPackagePatterns": ["@sapphire"]
+			"matchPackagePatterns": ["@sapphire"],
+			"matchUpdateTypes": [
+				"minor",
+				"patch",
+				"pin",
+				"digest"
+			]
 		}
 	],
 	"rangeStrategy": "bump"
