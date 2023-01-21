@@ -2,6 +2,17 @@ name: Deploy using Docker via SSH
 
 on:
   workflow_call:
+    secrets:
+      DOCKER_NETWORK:
+        required: true
+      DOPPLER_TOKEN:
+        required: true
+      SSH_HOST:
+        required: true
+      SSH_PRIVATE_KEY:
+        required: true
+      SSH_USER:
+        required: true
 
 jobs:
   ssh:
