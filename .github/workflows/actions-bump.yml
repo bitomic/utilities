@@ -1,0 +1,23 @@
+name: Bump package version
+
+on:
+  issue_comment:
+    types: [ created ]
+
+jobs:
+  bump:
+    name: Bump version triggered by PR comment
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Convert comment to lowercase
+        id: lowercase-comment
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: github.event.comment.body
+
+      - name: Check author
+        if: |
+          contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) &&
+          startsWith( steps.lowercase-comment.outputs.lowercase, 'bump' )
+        run: echo "Test success"
