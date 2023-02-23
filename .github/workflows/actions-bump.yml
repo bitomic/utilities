@@ -9,20 +9,11 @@ jobs:
     name: Bump version triggered by PR comment
     if: |
       github.event.issue.pull_request &&
-      contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association )
+      contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) &&
+      startsWith( $( echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]' ), "bump" )
 
     runs-on: ubuntu-latest
     steps:
-      - name: Convert comment to lowercase
-        id: lowercase-comment
-        uses: ASzc/change-string-case-action@v5
-        with:
-          string: ${{ github.event.comment.body }}
-
-      - name: Exit if it isn't a bump request
-        if: ${{ !startsWith( steps.lowercase-comment.outputs.lowercase, 'bump' ) }}
-        run: exit 1
-
       - name: Checkout
         uses: actions/checkout@v3
         with:
