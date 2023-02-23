@@ -7,7 +7,10 @@ on:
 jobs:
   bump:
     name: Bump version triggered by PR comment
-    if: ${{ github.event.issue.pull_request }}
+    if: |
+      github.event.issue.pull_request &&
+      contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association )
+
     runs-on: ubuntu-latest
     steps:
       - name: Convert comment to lowercase
@@ -16,15 +19,41 @@ jobs:
         with:
           string: ${{ github.event.comment.body }}
 
-      - name: Debug outputs
-        run: |
-          echo ${{ github.event.comment.author_association }}
-          echo ${{ contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) }}
-          echo ${{ steps.lowercase-comment.outputs.lowercase }}
-          echo ${{ startsWith( steps.lowercase-comment.outputs.lowercase, 'bump' ) }}
+      - name: Exit if it isn't a bump request
+        if: ${{ !startsWith( steps.lowercase-comment.outputs.lowercase, 'bump' ) }}
+        run: exit 1
 
-      - name: Check author
-        if: |
-          contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) &&
-          startsWith( steps.lowercase-comment.outputs.lowercase, 'bump' )
-        run: echo "Test success"
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Setup Github Action user
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Github Action"
+          
+      - name: Bump version (patch)
+        if: contains( steps.lowercase-comment.outputs.lowercase, 'patch' )
+        run: |
+          if [ ${{ contains( steps.lowercase-comment.outputs.lowercase, 'patch' ) }} ] ; then
+            BUMP = "patch"
+          elif [ contains( steps.lowercase-comment.outputs.lowercase, 'minor' ) ]; then
+            BUMP = "minor"
+          elif [ contains( steps.lowercase-comment.outputs.lowercase, 'major' ) ]; then
+            BUMP = "major"
+          else
+            exit 1
+          fi
+          npm version $BUMP -m "chore: set version to %s"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: ${{ github.head_ref }}
+          tags: true
