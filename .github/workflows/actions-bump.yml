@@ -9,11 +9,19 @@ jobs:
     name: Bump version triggered by PR comment
     if: |
       github.event.issue.pull_request &&
-      contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) &&
-      startsWith( "${{ ${github.event.comment.body,,} }}", "bump" )
+      contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association )
 
     runs-on: ubuntu-latest
     steps:
+      - name: Get lowercase comment
+        id: lowercase
+        run: |
+          echo "::set-output name=comment::${${{ github.event.comment.body }},,}"
+      
+      - name: Stop if it isn't a bump request
+        if: ${{ !startsWith( steps.lowercase.outputs.comment, 'bump' ) }}
+        run: exit 1
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
