@@ -39,16 +39,13 @@ jobs:
           git config --local user.name "Github Action"
           
       - name: Bump version (patch)
-        if: contains( steps.lowercase-comment.outputs.lowercase, 'patch' )
         run: |
-          if [ ${{ contains( steps.lowercase-comment.outputs.lowercase, 'patch' ) }} ] ; then
-            BUMP = "patch"
-          elif [ contains( steps.lowercase-comment.outputs.lowercase, 'minor' ) ]; then
+          if [ contains( steps.lowercase-comment.outputs.lowercase, 'minor' ) ]; then
             BUMP = "minor"
           elif [ contains( steps.lowercase-comment.outputs.lowercase, 'major' ) ]; then
             BUMP = "major"
           else
-            exit 1
+            BUMP = "patch"
           fi
           npm version $BUMP -m "chore: set version to %s"
 
