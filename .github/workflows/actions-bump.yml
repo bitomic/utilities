@@ -48,4 +48,4 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: ${{ github.event.pull_request.head.sha }}
+          branch: ${{ github.ref }}
