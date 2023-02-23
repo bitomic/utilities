@@ -38,7 +38,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "Github Action"
           
-      - name: Bump version (patch)
+      - name: Bump version
         run: |
           if [ ${{ contains( steps.lowercase-comment.outputs.lowercase, 'minor' ) }} ]; then
             BUMP = "minor"
@@ -47,7 +47,7 @@ jobs:
           else
             BUMP = "patch"
           fi
-          npm version $(BUMP) -m "chore: set version to %s"
+          npm version $($BUMP) -m "chore: set version to %s"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
