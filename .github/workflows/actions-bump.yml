@@ -10,7 +10,7 @@ jobs:
     if: |
       github.event.issue.pull_request &&
       contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) &&
-      startsWith( "${github.event.comment.body,,}", "bump" )
+      startsWith( "${{ ${github.event.comment.body,,} }}", "bump" )
 
     runs-on: ubuntu-latest
     steps:
