@@ -10,7 +10,7 @@ jobs:
     if: |
       github.event.issue.pull_request &&
       contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) &&
-      startsWith( $( echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]' ), "bump" )
+      startsWith( "$( echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]' )", "bump" )
 
     runs-on: ubuntu-latest
     steps:
@@ -31,9 +31,9 @@ jobs:
           
       - name: Bump version (patch)
         run: |
-          if [ contains( steps.lowercase-comment.outputs.lowercase, 'minor' ) ]; then
+          if [ ${{ contains( steps.lowercase-comment.outputs.lowercase, 'minor' ) }} ]; then
             BUMP = "minor"
-          elif [ contains( steps.lowercase-comment.outputs.lowercase, 'major' ) ]; then
+          elif [ ${{ contains( steps.lowercase-comment.outputs.lowercase, 'major' ) }} ]; then
             BUMP = "major"
           else
             BUMP = "patch"
