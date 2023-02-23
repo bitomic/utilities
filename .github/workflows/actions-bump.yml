@@ -16,6 +16,13 @@ jobs:
         with:
           string: github.event.comment.body
 
+      - name: Debug outputs
+        run: |
+          echo ${{ github.event.comment.author_association }}
+          echo ${{ contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) }}
+          echo ${{ steps.lowercase-comment.outputs.lowercase }}
+          echo ${{ startsWith( steps.lowercase-comment.outputs.lowercase, 'bump' ) }}
+
       - name: Check author
         if: |
           contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) &&
