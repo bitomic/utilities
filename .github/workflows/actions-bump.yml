@@ -21,7 +21,7 @@ jobs:
     name: Bump version triggered by PR comment
     if: |
       inputs.pull_request &&
-      contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), inputs.author_association ) &&
+      contains( fromJSON( '[ "collaborator", "contributor", "member", "owner" ]' ), inputs.author_association ) &&
       startsWith( inputs.comment, 'bump' )
 
     runs-on: ubuntu-latest
