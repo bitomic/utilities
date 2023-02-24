@@ -41,6 +41,11 @@ jobs:
           persist-credentials: false
           ref: ${{ steps.comment-branch.outputs.head_ref }}
 
+      - name: Setup Github Action user
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
       - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
@@ -61,11 +66,6 @@ jobs:
           else
             npm version patch -m "chore: set version to %s"
           fi
-
-      - name: Setup Github Action user
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
