@@ -1,17 +1,28 @@
 name: Bump package version
 
 on:
-  issue_comment:
-    types: [ created ]
   workflow_call:
+    inputs:
+      author_association:
+        description: 'Pass the github.event.comment.author_association variable'
+        required: true
+        type: string
+      comment:
+        description: 'Pass the github.event.comment.body variable'
+        required: true
+        type: string
+      pull_request:
+        description: 'Pass the github.event.issue.pull_request variable'
+        required: true
+        type: boolean
 
 jobs:
   bump:
     name: Bump version triggered by PR comment
     if: |
-      github.event.issue.pull_request &&
-      contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), github.event.comment.author_association ) &&
-      startsWith( github.event.comment.body, 'bump' )
+      inputs.pull_request &&
+      contains( fromJSON( '[ "collaborator", "member", "owner" ]' ), inputs.author_association ) &&
+      startsWith( inputs.comment, 'bump' )
 
     runs-on: ubuntu-latest
     steps:
@@ -38,7 +49,7 @@ jobs:
         id: lowercase-comment
         uses: ASzc/change-string-case-action@v5
         with:
-          string: ${{ github.event.comment.body }}
+          string: ${{ inputs.comment }}
           
       - name: Bump version
         run: |
