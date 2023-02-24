@@ -37,17 +37,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
+          persist-credentials: false
           ref: ${{ steps.comment-branch.outputs.head_ref }}
 
       - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-
-      - name: Setup Github Action user
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "Github Action"
 
       - name: Convert comment to lowercase
         id: lowercase-comment
@@ -64,6 +61,11 @@ jobs:
           else
             npm version patch -m "chore: set version to %s"
           fi
+
+      - name: Setup Github Action user
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
