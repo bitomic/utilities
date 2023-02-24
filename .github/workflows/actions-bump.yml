@@ -15,6 +15,10 @@ on:
         description: 'Pass the github.event.issue.pull_request variable'
         required: true
         type: boolean
+    secrets:
+      github-token:
+        description: 'A token passed from the caller workflow'
+        required: true
 
 jobs:
   bump:
@@ -65,3 +69,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: ${{ steps.comment-branch.outputs.head_ref }}
+          github_token: ${{ secrets.github-token }}
