@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: Get the branch of the PR
         id: comment-branch
-        uses: xt0rted/pull-request-comment-branch@v1
+        uses: xt0rted/pull-request-comment-branch@v2
 
       - name: Checkout
         uses: actions/checkout@v3
