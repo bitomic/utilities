@@ -46,4 +46,11 @@ jobs:
           ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker stop ${{ github.event.repository.name }} || true \\
           && docker rm ${{ github.event.repository.name }} || true \\
           && docker image prune -a -f \\
-          && docker run -d -t --net ${{ secrets.DOCKER_NETWORK }} --env DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} --name ${{ github.event.repository.name }} ghcr.io/$( echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]' ):${{ secrets.DOCKER_TAG || 'latest' }}"
+          && docker run -d -t \\
+              --net ${{ secrets.DOCKER_NETWORK }} \\
+              --env DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} \\
+              --name ${{ github.event.repository.name }} \\
+              --log-opt compress=true \\
+              --log-opt max-size=2m \\
+              --log-opt max-file=3 \\
+              ghcr.io/$( echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]' ):${{ secrets.DOCKER_TAG || 'latest' }}"
