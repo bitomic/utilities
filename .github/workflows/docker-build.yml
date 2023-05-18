@@ -21,4 +21,5 @@ jobs:
         with:
           context: .
           push: false
-          build-args: GITHUB_PAT=${{ secrets.GH_TOKEN }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
