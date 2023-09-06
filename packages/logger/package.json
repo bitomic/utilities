@@ -7,6 +7,11 @@
 	"files": [
 		"dist"
 	],
+	"exports": {
+		"import": "./dist/main.mjs",
+		"require": "./dist/main.js",
+		"types": "./dist/main.d.ts"
+	},
 	"bin": {
 		"history": "./dist/bin.js"
 	},

@@ -7,6 +7,11 @@
 	"files": [
 		"dist"
 	],
+	"exports": {
+		"import": "./dist/main.mjs",
+		"require": "./dist/main.js",
+		"types": "./dist/main.d.ts"
+	},
 	"scripts": {
 		"build": "rimraf tsconfig.tsbuildinfo && yarn tsup && yarn tsc --emitDeclarationOnly",
 		"build:watch": "yarn tsc -w --incremental",
