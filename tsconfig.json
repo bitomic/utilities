@@ -6,6 +6,7 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"sourceMap": true,
+		"declaration": true,
 
 		/* The "No" Corner */
 		"noImplicitAny": true,

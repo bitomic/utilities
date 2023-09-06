@@ -11,7 +11,7 @@
 		"history": "./dist/bin.js"
 	},
 	"scripts": {
-		"build": "yarn tsup && yarn tsc --emitDeclarationOnly",
+		"build": "rimraf tsconfig.tsbuildinfo && yarn tsup && yarn tsc --emitDeclarationOnly",
 		"build:watch": "yarn tsc -w --incremental",
 		"lint": "eslint src/ --ext .ts --cache",
 		"lint:fix": "eslint src/ --fix --ext .ts --cache"
