@@ -58,7 +58,7 @@ __metadata:
   resolution: "@bitomic/logger@workspace:packages/logger"
   dependencies:
     "@types/node": ^20.8.10
-    "@types/split": ^1.0.4
+    "@types/split": ^1.0.5
     "@typescript-eslint/eslint-plugin": ^6.10.0
     "@typescript-eslint/parser": ^6.10.0
     colorette: ^2.0.20
@@ -717,13 +717,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/split@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@types/split@npm:1.0.4"
+"@types/split@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@types/split@npm:1.0.5"
   dependencies:
     "@types/node": "*"
     "@types/through": "*"
-  checksum: 248763141156687fbfa8dbbd2d94afe816396e437beca61538ecb141c5e9bc60ecf6d886ae1a0fa7c19b3593d6b9986dce53c515626989523e2104251446793a
+  checksum: fd3eb167e69b46e2d3f7e198a5b4ce27f552e0b9e19f35a1696f09be7faf869462047d3b9d0eb4edd8c2949d15ac08287b046143d1036596f0dfc7eaf4d24a09
   languageName: node
   linkType: hard
 
