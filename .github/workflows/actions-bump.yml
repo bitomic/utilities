@@ -53,7 +53,7 @@ jobs:
 
       - name: Convert comment to lowercase
         id: lowercase-comment
-        uses: ASzc/change-string-case-action@v5
+        uses: ASzc/change-string-case-action@v6
         with:
           string: ${{ inputs.comment }}
           
