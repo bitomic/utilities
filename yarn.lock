@@ -43,7 +43,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/eslint-config@workspace:packages/eslint-config"
   dependencies:
-    "@types/node": ^20.11.13
+    "@types/node": ^20.11.14
     "@typescript-eslint/eslint-plugin": ^6.20.0
     "@typescript-eslint/parser": ^6.20.0
     eslint: ^8.56.0
@@ -57,7 +57,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/logger@workspace:packages/logger"
   dependencies:
-    "@types/node": ^20.11.13
+    "@types/node": ^20.11.14
     "@types/split": ^1.0.5
     "@typescript-eslint/eslint-plugin": ^6.20.0
     "@typescript-eslint/parser": ^6.20.0
@@ -77,7 +77,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/material-colors@workspace:packages/material-colors"
   dependencies:
-    "@types/node": ^20.11.13
+    "@types/node": ^20.11.14
     "@typescript-eslint/eslint-plugin": ^6.20.0
     "@typescript-eslint/parser": ^6.20.0
     eslint: ^8.56.0
@@ -91,7 +91,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/utilities@workspace:packages/utilities"
   dependencies:
-    "@types/node": ^20.11.13
+    "@types/node": ^20.11.14
     "@typescript-eslint/eslint-plugin": ^6.20.0
     "@typescript-eslint/parser": ^6.20.0
     eslint: ^8.56.0
@@ -769,12 +769,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.11.13":
-  version: 20.11.13
-  resolution: "@types/node@npm:20.11.13"
+"@types/node@npm:^20.11.14":
+  version: 20.11.14
+  resolution: "@types/node@npm:20.11.14"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 76fbe4dbcce9ecb602c1e0528124bb113e9ece58d417e96710b7ba96dd67cd0bb050272218dc796be36c0d8c29d7c55da44311be429daa4253c3a00f1b3840ff
+  checksum: 656644db447386dbefb97e76861f1f69e32995196503f6e215261ef2fd92f065c15b60f506c5e930c33a5c3a0d9513e0a93eb319c146b38ec2d5f9bde45b8886
   languageName: node
   linkType: hard
 
