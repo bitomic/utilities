@@ -38,6 +38,6 @@
 		"@types/split": "^1.0.5",
 		"colorette": "^2.0.20",
 		"split": "^1.0.1",
-		"winston": "^3.13.0"
+		"winston": "^3.15.0"
 	}
 }
