@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@cd7d8d697e10461458bc61a30d094dc601a8b017 
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 
         with:
           submodules: true
       - name: Set up Docker Buildx
