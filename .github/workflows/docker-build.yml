@@ -16,7 +16,7 @@ jobs:
         with:
           submodules: true
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
         uses: docker/build-push-action@f8bc7f46003ef0cf98b715743d86c2f1ccd01436
