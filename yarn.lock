@@ -43,7 +43,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/eslint-config@workspace:packages/eslint-config"
   dependencies:
-    "@types/node": ^20.12.5
+    "@types/node": ^24.19.0
     "@typescript-eslint/eslint-plugin": ^7.5.0
     "@typescript-eslint/parser": ^7.5.0
     eslint: ^9.0.0
@@ -57,7 +57,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/logger@workspace:packages/logger"
   dependencies:
-    "@types/node": ^20.12.5
+    "@types/node": ^24.19.0
     "@types/split": ^1.0.5
     "@typescript-eslint/eslint-plugin": ^7.5.0
     "@typescript-eslint/parser": ^7.5.0
@@ -77,7 +77,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/material-colors@workspace:packages/material-colors"
   dependencies:
-    "@types/node": ^20.12.5
+    "@types/node": ^24.19.0
     "@typescript-eslint/eslint-plugin": ^7.5.0
     "@typescript-eslint/parser": ^7.5.0
     eslint: ^9.0.0
@@ -91,7 +91,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bitomic/utilities@workspace:packages/utilities"
   dependencies:
-    "@types/node": ^20.12.5
+    "@types/node": ^24.19.0
     "@typescript-eslint/eslint-plugin": ^7.5.0
     "@typescript-eslint/parser": ^7.5.0
     eslint: ^9.0.0
@@ -770,12 +770,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.12.5":
-  version: 20.12.5
-  resolution: "@types/node@npm:20.12.5"
+"@types/node@npm:^24.19.0":
+  version: 24.19.0
+  resolution: "@types/node@npm:24.19.0"
   dependencies:
-    undici-types: ~5.26.4
-  checksum: 38358c091392bb3def1136772ada4ccd39a9429d459160b5ab728b690d2f15f2212eafd9e65ce716e270f70a4e6927ebffccfefc08dabdf68f4016c1fc8a7938
+    undici-types: ">=7.24.0 <7.24.7"
+  checksum: 17381039ae34c5a34fc78b28614c5ecc66bd7092df93a235ea74b77ffa313f0e757373d23f9567dfe7f1cdb52a94260583f7f654919ec086cf7fe19e60e30294
   languageName: node
   linkType: hard
 
@@ -4115,10 +4115,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~5.26.4":
-  version: 5.26.5
-  resolution: "undici-types@npm:5.26.5"
-  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
+"undici-types@npm:>=7.24.0 <7.24.7":
+  version: 7.24.6
+  resolution: "undici-types@npm:7.24.6"
+  checksum: e79802e37dc472c6324850d938b5df6b9e796f6a1bb5f8ccd24f3a6d17eae94a9cc125506c8b339a3293ffbad81daeba30b843e564c1d237b3c8deafd98b6267
   languageName: node
   linkType: hard
 
